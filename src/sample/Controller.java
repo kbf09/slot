@@ -17,6 +17,7 @@ public class Controller implements Initializable {
     private Label t2;
     @FXML
     private Label t3;
+
     Random rnd1 = new Random();
 
 
