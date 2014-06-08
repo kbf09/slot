@@ -2,43 +2,41 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-
-import java.net.URL;
 import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.TimerTask;
 
-public class Controller implements Initializable {
-    @FXML
-    private Label t1;
-    @FXML
-    private Label t2;
-    @FXML
-    private Label t3;
+public class Controller extends TimerTask {
 
-    Random rnd1 = new Random();
+    @FXML
+    public static Label t1;
+    @FXML
+    public Label t2;
+    @FXML
+    public Label t3;
 
+    private Random rand = new Random();
 
     @FXML
     public void ac1(ActionEvent event) {
-
-            t1.setText("" +rnd1.nextInt(10));
+        t1.setText("" + rand.nextInt(10));
+    }
+    @FXML
+    public void ac2(ActionEvent event) {
 
     }
     @FXML
-    private void ac2(ActionEvent event) {
-
-            t2.setText("" +rnd1.nextInt(10));
-
-    }
-    @FXML
-    private void ac3(ActionEvent event) {
-
-            t3.setText("" +rnd1.nextInt(10));
+    public void ac3(ActionEvent event) {
 
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}
+    public void run() {
+
+        Controller.t1.setText("" + rand.nextInt(10));
+        //this.t2.setText("" + rand.nextInt(10));
+        //this.t3.setText("" + rand.nextInt(10));
+    }
+
 }
+
